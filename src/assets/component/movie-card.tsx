@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import  { useState } from "react";
 
 interface Props {
   title: string;
