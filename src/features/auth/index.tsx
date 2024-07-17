@@ -54,7 +54,7 @@ const Authentication = () => {
             type="submit"
             className="bg-red-600 text-white rounded-sm py-1 px-5"
           >
-            Login
+            Submit 
           </button>
         </form>
       </div>

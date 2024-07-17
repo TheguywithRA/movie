@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import TopRatedCard from "../../assets/component/top-ratedcard";
 import { getTopRated } from "../service";
