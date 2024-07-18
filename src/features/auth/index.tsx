@@ -23,8 +23,10 @@ const Authentication = () => {
     try {
         const response = await PostLogin(payload);
 
+        if (response?. token) {
         localStorage.setItem("token", response?.token as string);
         navigate("/")
+        }
     } catch (error) {
         console.log(error);
     }
