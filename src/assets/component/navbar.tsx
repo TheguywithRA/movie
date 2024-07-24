@@ -1,11 +1,17 @@
-import { FaFilm, FaHome, FaStar } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { FaFilm, FaHome, FaSignOutAlt, FaStar } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [activeMenu, setActiveMenu] = useState(location.pathname);
+  
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   const handleMenuClick = (to: string) => {
     setActiveMenu(to);
@@ -22,7 +28,7 @@ const Navbar = () => {
         <Link
           to={"/"}
           className={`flex items-center font-bold text-gray-300 ${
-            activeMenu === "/" ? "text-red-500" : ""
+            activeMenu === "/" ? "text-red-600" : ""
           }`}
           style={{ fontSize: "17px" }}
           onClick={() => handleMenuClick("/")}
@@ -33,7 +39,7 @@ const Navbar = () => {
         <Link
           to={"/movie"}
           className={`flex items-center font-bold text-gray-300 ${
-            activeMenu === "/movie" ? "text-red-500" : ""
+            activeMenu === "/movie" ? "text-red-600" : ""
           }`}
           style={{ fontSize: "17px" }}
           onClick={() => handleMenuClick("/movie")}
@@ -44,7 +50,7 @@ const Navbar = () => {
         <Link
           to={"/toprated"}
           className={`flex items-center font-bold text-gray-300 ${
-            activeMenu === "/toprated" ? "text-red-500" : ""
+            activeMenu === "/toprated" ? "text-red-600" : ""
           }`}
           style={{ fontSize: "17px" }}
           onClick={() => handleMenuClick("/toprated")}
@@ -52,6 +58,14 @@ const Navbar = () => {
           <FaStar className="mr-1" />
           Top Rated
         </Link>
+        <div
+          className="flex items-center font-bold text-gray-300 cursor-pointer"
+          style={{ fontSize: "17px" }}
+          onClick={handleLogout}
+        >
+          <FaSignOutAlt className="mr-1" />
+          LogOut
+        </div>
       </div>
     </div>
   );
