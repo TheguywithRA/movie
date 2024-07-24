@@ -37,9 +37,9 @@ const Authentication = () => {
       <div className="flex flex-row bg-cover bg-center item-center justify-center flex-grow" style={{ backgroundImage: 'url(/path/to/your/background-image.jpg)' }}>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center bg-white bg-opacity-90 p-6 rounded-lg shadow-lg gap-4"
+          className="flex flex-col justify-center items-center bg-gradient-to-b from-gray-800 to-gray-950 bg-opacity-90 p-6 rounded-lg gap-4"
         >
-          <label className="font-semibold text-gray-800 text-lg">Login</label>
+          <label className="font-semibold text-gray-300 text-lg">Login</label>
           <input
             type="text"
             placeholder="Username"
@@ -54,7 +54,7 @@ const Authentication = () => {
           />
           <button
             type="submit"
-            className="bg-red-600 text-white rounded-sm py-1 px-5"
+            className="bg-red-600 text-white rounded-md py-1 px-5"
           >
             Submit 
           </button>
